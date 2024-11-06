@@ -1,0 +1,58 @@
+.bg-image {
+  position: relative;
+  background: linear-gradient(rgba(8, 8, 8, 0.3), rgba(8, 8, 8, 0.3)), url('https://media.istockphoto.com/id/1191080960/photo/traditional-turkish-breakfast-and-people-taking-various-food-wide-composition.jpg?s=612x612&w=0&k=20&c=PP5ejMisEwzcLWrNmJ8iPPm_u-4P6rOWHEDpBPL2n7Q=');
+  min-height: 100vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.text-content {
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.header-title {
+  text-transform: uppercase;
+  letter-spacing: 16px;
+  color: #fff;
+  font-size: 80px;
+  margin-bottom: 32px;
+}
+
+.search-box {
+  padding-top: 100px !important;
+  padding-bottom: 20px !important;
+}
+
+.search-heading {
+  font-size: 30px;
+  margin-bottom: 16px;
+}
+
+.detailsPageContent {
+  padding-top: 100px !important
+}
+
+
+.cardlist {
+  width: 250px;
+  box-shadow: 0 14px 8px 0 rgba(0, 0, 0, 0.2), 0 10px 25px 0 rgba(0, 0, 0, 0.19);
+}
+
+.alert-container {
+  position: absolute;
+  top: 56px; /* Adjust based on navbar height */
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  z-index: 1; /* Ensures it overlaps content below */
+}
+
+.alert-content {
+  width: 100%;
+  max-width: 600px; /* Adjust width as needed */
+}
