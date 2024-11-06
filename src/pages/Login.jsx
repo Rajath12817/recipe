@@ -1,13 +1,12 @@
-import React, { useState } from "react";
+import React, { useState } from 'react';
+import { FaEnvelope, FaLock } from 'react-icons/fa';
 import  { useNavigate } from "react-router-dom";
 
-
-const Login = (props) => {
-
+function Login(props) {
   const [credentials,setCredentials] = useState({email :"",password:""})
   let navigate = useNavigate()
 
-  const handlesubmit=async(e)=>{
+  const handleSubmit=async(e)=>{
     e.preventDefault()
     const response = await fetch('http://localhost:5000/api/auth/login', {
       method : 'POST',
@@ -32,50 +31,88 @@ const Login = (props) => {
 
 
   }
+
   const handlechange = (e) => {
     setCredentials({ ...credentials, [e.target.name]: e.target.value });
   };
 
   return (
-    <div className="container mt-3">
-      <h2>Login to continue with indian Bites</h2>
-      <form  onSubmit={handlesubmit}>
-        <div className="mb-3">
-          <label htmlFor="exampleInputEmail1" className="form-label">
-            Email address
-          </label>
+    <div className="bg-image">
+      <form onSubmit={handleSubmit} 
+      style={{
+        padding: '20px', 
+        background: 'rgba(255, 248, 240, 0.9)', 
+        maxWidth: '400px', 
+        margin: 'auto', 
+        borderRadius: '10px',
+        boxShadow: '0 4px 8px rgba(0, 0, 0, 0.2)',
+        fontFamily: 'Georgia, serif',
+      }}
+    >
+      <h2 className="text-center mb-4" 
+        style={{ color: '#D2691E', fontFamily: 'Brush Script MT, cursive', fontSize: '28px' }}
+      >
+        Welcome Back to <span style={{ fontStyle: 'italic' }}>Indian Bites</span>!
+      </h2>
+      <div className="mb-3">
+        <label className="form-label" style={{ fontWeight: '500' }}>Email Address</label>
+        <div className="input-group">
+          <span className="input-group-text"><FaEnvelope color="#D2691E" /></span>
           <input
             type="email"
             className="form-control"
-            id="email"
-            name="email"
+            id='email'
+            name='email'
+            placeholder="you@example.com"
             value={credentials.email}
-            aria-describedby="emailHelp"
             onChange={handlechange}
+            required
+            style={{
+              borderRadius: '5px',
+              backgroundColor: '#fffaf0',
+              border: '1px solid #D2691E',
+            }}
           />
-          <div id="emailHelp" className="form-text">
-            We'll never share your email with anyone else.
-          </div>
         </div>
-        <div className="mb-3">
-          <label htmlFor="exampleInputPassword1" className="form-label">
-            Password
-          </label>
+      </div>
+      <div className="mb-3">
+        <label className="form-label" style={{ fontWeight: '500' }}>Password</label>
+        <div className="input-group">
+          <span className="input-group-text"><FaLock color="#D2691E" /></span>
           <input
             type="password"
             className="form-control"
-            id="password"
-            name="password"
+            placeholder="Enter your password"
+            id='password'
+            name='password'
             value={credentials.password}
             onChange={handlechange}
+            required
+            style={{
+              borderRadius: '5px',
+              backgroundColor: '#fffaf0',
+              border: '1px solid #D2691E',
+            }}
           />
         </div>
-        <button type="submit" className="btn btn-primary">
-          Submit
-        </button>
-      </form>
+      </div>
+      <button
+        type="submit"
+        className="btn w-100"
+        style={{
+          borderRadius: '5px', 
+          padding: '10px', 
+          fontWeight: 'bold', 
+          backgroundColor: '#D2691E', 
+          color: '#fff'
+        }}
+      >
+        Login
+      </button>
+    </form>
     </div>
+   
   );
-};
+}
 
 export default Login;
