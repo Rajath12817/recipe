@@ -11,10 +11,10 @@ const UserSchema = new Schema({
         type : String,
         required : true
     },
-    region : {
-        type : String,
-        required : true
-    }
+    region: {
+        type: [String], 
+        required: true
+    },
 });
 
 module.exports = mongoose.model('state',UserSchema)

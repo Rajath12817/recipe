@@ -1,22 +1,25 @@
-
+// RecipeList.js
+import React from 'react';
 import { Container, Header, Grid } from "semantic-ui-react";
 import RecipeListItem from "./RecipeListItem";
 
 const RecipeList = ({ recipes, searchedQuery }) => {
-
     return (
-        <Container>
+        <Container style={{ marginTop: '2em' }}>
             <Header 
                 size="huge"
-                content={`RECIPE LIST FOR ${searchedQuery}`}
-                textAlign='center'
+                content={`RECIPE LIST FOR "${searchedQuery}"`}
+                textAlign="center"
+                style={{ marginBottom: '2em' }}
             />
-            <Grid columns={4} doubling>
+            <Grid>
                 { 
                     recipes && recipes.map(recipe => (
-                        <Grid.Column>
-                            <RecipeListItem recipe={recipe} />
-                        </Grid.Column>
+                        <Grid.Row key={recipe.recipe_id}>
+                            <Grid.Column width={16}>
+                                <RecipeListItem recipe={recipe} />
+                            </Grid.Column>
+                        </Grid.Row>
                     ))
                 }
             </Grid>

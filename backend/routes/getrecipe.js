@@ -1,14 +1,13 @@
 const express = require("express");
 // const fetchuser = require("../middleware/fetchuser");
 const router = express.Router();
-const State =  require("../models/States");
-
+const Recipe = require("../models/Recipe")
 
 //Route 1 : get all notes : POST "/api/auth/getstate"   require auth
-router.get("/getstate", async (req, res) => {
+router.get("/getrecipe", async (req, res) => {
   try {
-    const states = await State.find();
-    res.json(states);
+    const recipe = await Recipe.find();
+    res.json(recipe);
   } catch (error) {
     console.error(error.message);
     res.status(500).send("Some error occurred");

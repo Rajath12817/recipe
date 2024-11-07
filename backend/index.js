@@ -12,9 +12,10 @@ app.use(express.json())
 //available  routes
 app.use('/api/auth',require('./routes/auth'))
 app.use('/api/state',require('./routes/getstate'))
+app.use('/api/recipe',require('./routes/getrecipe'))
 
 app.get('/', (req, res) => {
-  res.send('Hello Rajath!')
+  res.send('Hello')
 })
 
 app.listen(port, () => {

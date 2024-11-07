@@ -5,24 +5,25 @@ const Regional = () => {
     const [regions, setRegions] = useState([]);
 
     useEffect(() => {
-        const fetchRegions = async () => {
-            try {
-                const response = await fetch('http://localhost:5000/api/state/getstate', {
-                    method: 'GET',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                });
-                const data = await response.json();
-                setRegions(data);  // Save data to state for use in RegionalList
-                console.log(data);
-            } catch (error) {
-                console.error("Error fetching regions:", error);
-            }
-        };
+
 
         fetchRegions();
     }, []);
+    const fetchRegions = async () => {
+        try {
+            const response = await fetch('http://localhost:5000/api/state/getstate', {
+                method: 'GET',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+            });
+            const data = await response.json();
+            setRegions(data);  // Save data to state for use in RegionalList
+            console.log(data);
+        } catch (error) {
+            console.error("Error fetching regions:", error);
+        }
+    };
 
     return (
         <div className="container my-3">

@@ -12,6 +12,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import RecipeDetails from './components/RecipeDetails';
 import Regional from './regional/Regional';
 import Subregion from './regional/Subregion';
+import Regrecipelist from './regional/regionalRecipes/Regrecipelist';
 
 function App() {
 
@@ -44,6 +45,7 @@ function App() {
           <Route path="/recipes/:recipeId" element={<RecipeDetails />} />
           <Route path="/regional" element={<Regional />} />
           <Route path='/subregion' element={<Subregion/>}/>
+          <Route path='/subregion/regionalrecipes' element={<Regrecipelist/>}/>
         </Routes>
     </Router>
   );
