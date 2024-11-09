@@ -16,7 +16,9 @@ const RecipeDetails = () => {
                 setRecipe(result.recipe);
             }
         }
+
         getData();
+        // eslint-disable-next-line 
     }, [])
 
     return (

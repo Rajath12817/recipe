@@ -14,7 +14,7 @@ const Search = ({ setSearchedQuery }) => {
                 <h2 className='search-heading'>
                     Search Your favourite food <span style={{ color: 'green' }}>Recipe</span>
                 </h2>
-                {/* <h4>Input Recipes seperated by comma</h4> */}
+            
                 <Form onSubmit={onFormSubmit}>
                     <Input 
                         placeholder="tomato,potato,pizza"

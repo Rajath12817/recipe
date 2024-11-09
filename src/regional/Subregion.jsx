@@ -1,15 +1,14 @@
-import { useLocation} from "react-router-dom";
-import { useEffect,useState } from "react";
-import { kimage } from "../constants/constant";
+import { useLocation } from "react-router-dom";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 const Subregion = () => {
     const location = useLocation();
-    const { region } = location.state || {}; // Access subdetails from state
+    const { region, link } = location.state || {};
     const [recipes, setRecipes] = useState([]);
 
     useEffect(() => {
-        fetchRecipes()
+        fetchRecipes();
     }, []);
 
     const fetchRecipes = async () => {
@@ -21,31 +20,32 @@ const Subregion = () => {
                 },
             });
             const data = await response.json();
-            setRecipes(data);  // Save data to state for use in RegionalList
+            setRecipes(data);
             console.log(data);
         } catch (error) {
-            console.error("Error fetching regions:", error);
+            console.error("Error fetching recipes:", error);
         }
     };
 
-
     return (
-        <div className="container">
-            <h1>Regional Foods</h1>
-            <p>Explore the taste of Indian foods</p>
-            {region.map((sub, index) => (
-                <Link to="/subregion/regionalrecipes" key={index} style={{ textDecoration: 'none' }} state={{ subRegion: sub, recipes:recipes}}>
-                    <div className="card bg-dark text-white mb-5" style={{ height: "15rem", width: "60rem", borderRadius: "20px", paddingBottom: "40px", marginBottom: "50px" }}>
-                        <img src={kimage} className="card-img" alt="Region" style={{ height: "15rem", width: "60rem", borderRadius: "20px" }} />
-                        <div className="card-img-overlay" style={{ borderRadius: "20px" }}>
-                            <h2 className="card-title" style={{ padding: "70px 0px 0px 0px", fontFamily: "sans-serif", color: "rgb(177, 182, 189)", fontWeight: "bolder" }}>
-                                {sub}
-                            </h2>
-                            <p className="card-text">Explore the taste of {sub}</p>
-                        </div>
+        <div className="container text-center">
+            <h1 className="display-4">Regional Foods</h1>
+            <p className="lead">Explore the taste of Indian foods</p>
+            <div className="row">
+                {region.map((sub, index) => (
+                    <div className="col-md-6 col-lg-4 mb-4" key={index}>
+                        <Link to="/subregion/regionalrecipes" className="recipe-link" style={{ textDecoration: 'none' }} state={{ subRegion: sub, recipes: recipes }}>
+                            <div className="card recipe-card">
+                                <img src={link[index]} className="card-img-top" alt="Region" />
+                                <div className="card-body text-center">
+                                    <h5 className="card-title">{sub}</h5>
+                                    <p className="card-text">Discover {sub}'s cuisine</p>
+                                </div>
+                            </div>
+                        </Link>
                     </div>
-                </Link>
-            ))}
+                ))}
+            </div>
         </div>
     );
 };

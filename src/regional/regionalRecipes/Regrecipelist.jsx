@@ -1,7 +1,7 @@
 import React from 'react'
 import { useLocation} from "react-router-dom";
 import { Container, Header, Grid } from "semantic-ui-react";
-import RecipeListItem from '../../components/RecipeListItem';
+import Regrecipelistitem from './Regrecipelistitem';
 
 const Regrecipelist = () => {
     const location = useLocation();
@@ -20,7 +20,7 @@ const Regrecipelist = () => {
                 .map(recipe => (
                     <Grid.Row key={recipe.recipe_id}>
                         <Grid.Column width={16}>
-                            <RecipeListItem recipe={recipe} />
+                            <Regrecipelistitem recipe={recipe} />
                         </Grid.Column>
                     </Grid.Row>
                 ))
