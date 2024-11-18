@@ -28,7 +28,19 @@ const Subregion = () => {
     };
 
     return (
-        <div className="container text-center">
+        <div
+        style={{
+            backgroundColor: '#FFDEE9',
+            backgroundImage: 'linear-gradient(0deg, #FFDEE9 0%, #B5FFFC 100%)',
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            backgroundAttachment: 'fixed',
+            minHeight: '100vh',
+            color: 'white',
+            paddingTop: '4rem', 
+        }}
+        >
+        <div className="container text-center my-4">
             <h1 className="display-4">Regional Foods</h1>
             <p className="lead">Explore the taste of Indian foods</p>
             <div className="row">
@@ -46,6 +58,7 @@ const Subregion = () => {
                     </div>
                 ))}
             </div>
+        </div>
         </div>
     );
 };

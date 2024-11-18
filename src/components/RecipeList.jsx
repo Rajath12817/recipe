@@ -5,12 +5,13 @@ import RecipeListItem from "./RecipeListItem";
 
 const RecipeList = ({ recipes, searchedQuery }) => {
     return (
+        < div >
         <Container style={{ marginTop: '2em' }}>
             <Header 
                 size="huge"
                 content={`RECIPE LIST FOR "${searchedQuery}"`}
                 textAlign="center"
-                style={{ marginBottom: '2em' }}
+                style={{ marginBottom: '2em'}}
             />
             <Grid>
                 { 
@@ -24,6 +25,7 @@ const RecipeList = ({ recipes, searchedQuery }) => {
                 }
             </Grid>
         </Container>
+        </div>
     )
 }
 

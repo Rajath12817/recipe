@@ -11,7 +11,7 @@ const Search = ({ setSearchedQuery }) => {
     return (
         <Grid column={2} textAlign="center" className='search-box'>
             <Grid.Column>
-                <h2 className='search-heading'>
+                <h2 className='search-heading' style={{ color: 'salmon' }} >
                     Search Your favourite food <span style={{ color: 'green' }}>Recipe</span>
                 </h2>
             

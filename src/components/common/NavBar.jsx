@@ -13,7 +13,7 @@ const NavBar = () => {
   };
 
   return (
-    <nav className="navbar navbar-expand-lg navbar-light bg-light navbar-custom shadow-lg">
+    <nav className="navbar navbar-expand-lg navbar-light bg-light navbar-custom shadow-lg fixed-top">
       <div className="container-fluid">
         <Link className="navbar-brand logo" to="/">
           <img

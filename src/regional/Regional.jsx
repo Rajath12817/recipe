@@ -17,7 +17,7 @@ const Regional = () => {
                 },
             });
             const data = await response.json();
-            setRegions(data);  // Save data to state for use in RegionalList
+            setRegions(data);
             console.log(data);
         } catch (error) {
             console.error("Error fetching regions:", error);
@@ -25,7 +25,19 @@ const Regional = () => {
     };
 
     return (
-        <div className="container my-5 text-center">
+        <div
+            className="container-fluid d-flex flex-column align-items-center justify-content-center text-center mt-5"
+            style={{
+                backgroundColor: '#FFDEE9',
+                backgroundImage: 'linear-gradient(0deg, #FFDEE9 0%, #B5FFFC 100%)',
+                backgroundSize: 'cover',
+                backgroundPosition: 'center',
+                backgroundAttachment: 'fixed',
+                minHeight: '100vh',
+                color: 'white',
+                paddingTop: '4rem', 
+            }}
+        >
             <h1 style={{
                 fontFamily: "'Pacifico', cursive",
                 color: "#D35400",
@@ -37,12 +49,12 @@ const Regional = () => {
             <p style={{
                 fontFamily: "'Roboto', sans-serif",
                 fontSize: "1.2rem",
-                color: "#555",
+                color: "black",
                 marginBottom: "2rem"
             }}>
                 Discover the flavors of India, one region at a time.
             </p>
-            <div>
+            <div className="w-100">
                 <RegionalList details={regions} />
             </div>
         </div>
@@ -50,3 +62,9 @@ const Regional = () => {
 };
 
 export default Regional;
+
+
+
+
+
+

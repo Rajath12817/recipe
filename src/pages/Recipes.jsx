@@ -19,10 +19,21 @@ const Recipes = () => {
     }
 
     return (
-        <>
+        <div
+        style={{
+            backgroundColor: '#FFDEE9',
+            backgroundImage: 'linear-gradient(0deg, #FFDEE9 0%, #B5FFFC 100%)',
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            backgroundAttachment: 'fixed',
+            minHeight: '100vh',
+            color: 'white',
+            paddingTop: '4rem', 
+        }}
+        >
             <Search setSearchedQuery={setSearchedQuery} />
             <RecipeList recipes={recipes} searchedQuery={searchedQuery} />
-        </>
+        </div>
     )
 }
 
