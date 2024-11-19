@@ -46,7 +46,7 @@ const Regrecipedetails = () => {
             <Grid.Column>
                 <Button 
                     as={Link}
-                    to={'/'}
+                    to={'/home'}
                     content="Back to Home"
                     color="yellow"
                     style={{ marginBottom: 40 }}

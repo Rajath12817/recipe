@@ -2,15 +2,30 @@ import React from "react";
 
 const About = () => {
   const teamMembers = [
-    { name: "Rajath", role: "Backend Developer", contribution: "Optimized APIs, handled database design, and implemented server-side logic with precision." },
-    { name: "Pranav", role: "Frontend Developer", contribution: "Crafted a responsive user interface using React, ensuring an engaging and seamless user experience." },
-    { name: "Rudra", role: "Database & Frontend Manager", contribution: "Led frontend design and managed database systems for efficient data handling." },
+    {
+      name: "Rajath",
+      role: "Backend Developer",
+      contribution: "Optimized APIs, handled database design, and implemented server-side logic with precision.",
+      link: "https://github.com/rajath12817",
+    },
+    {
+      name: "Pranav",
+      role: "Frontend Developer",
+      contribution: "Crafted a responsive user interface using React, ensuring an engaging and seamless user experience.",
+      link: "https://github.com/pranavsaxena77",
+    },
+    {
+      name: "Rudra",
+      role: "Database & Frontend Manager",
+      contribution: "Led frontend design and managed database systems for efficient data handling.",
+      link: "https://github.com/tyagirudra",
+    },
   ];
 
   return (
     <div
       style={{
-        backgroundImage: "url('https://wallpaperaccess.com/full/1737995.jpg')", // Background image
+        backgroundImage: "url('https://wallpaperaccess.com/full/1737995.jpg')",
         backgroundSize: "cover",
         backgroundPosition: "center",
         fontFamily: "'Poppins', sans-serif",
@@ -64,7 +79,7 @@ const About = () => {
           textAlign: "center",
           fontFamily: "'Poppins', sans-serif",
           color: "#FFF",
-          backgroundColor: "rgba(0, 0, 0, 0.6)", // Semi-transparent background for readability
+          backgroundColor: "rgba(0, 0, 0, 0.6)",
           padding: "1.5rem 2rem",
           borderRadius: "12px",
         }}
@@ -87,72 +102,83 @@ const About = () => {
         }}
       >
         {teamMembers.map((member, index) => (
-          <div
+          <a
             key={index}
+            href={member.link}
+            target="_blank"
+            rel="noopener noreferrer"
             style={{
-              backgroundColor: "#FFF",
-              padding: "1.5rem",
-              borderRadius: "15px",
-              boxShadow: "0 8px 20px rgba(0, 0, 0, 0.3)",
-              textAlign: "center",
-              flex: "1 1 calc(25% - 2rem)",
-              minWidth: "220px",
-              height: "240px", // Increased height for enhanced content
-              animation: `slideIn 0.8s ease-in-out ${index * 0.2}s forwards`,
-              transform: "translateY(50px)", // Initial state for animation
-              opacity: 0,
-              transition: "transform 0.3s ease, box-shadow 0.3s ease",
-              cursor: "pointer",
-              position: "relative",
-              overflow: "hidden",
-            }}
-            onMouseOver={(e) => {
-              e.currentTarget.style.boxShadow = "0 15px 30px rgba(0, 255, 255, 0.6)";
-              e.currentTarget.style.transform = "scale(1.05)";
-            }}
-            onMouseOut={(e) => {
-              e.currentTarget.style.boxShadow = "0 8px 20px rgba(0, 0, 0, 0.3)";
-              e.currentTarget.style.transform = "scale(1)";
+              textDecoration: "none",
+              color: "inherit", // Keeps the original text colors
+              flex: "1 1 calc(33% - 2rem)", // Flexbox for equal-width cards
+              maxWidth: "300px", // Max width for each card
             }}
           >
             <div
               style={{
-                position: "absolute",
-                top: 0,
-                left: 0,
+                backgroundColor: "#FFF",
+                padding: "1.5rem",
+                borderRadius: "15px",
+                boxShadow: "0 8px 20px rgba(0, 0, 0, 0.3)",
+                textAlign: "center",
                 width: "100%",
-                height: "100%",
-                background: "linear-gradient(135deg, #3B82F6, #1E3A8A)",
-                zIndex: -1,
-                opacity: 0.1,
+                height: "280px", // Ensures all boxes are the same height
+                animation: `slideIn 0.8s ease-in-out ${index * 0.2}s forwards`,
+                transform: "translateY(50px)",
+                opacity: 0,
+                transition: "transform 0.3s ease, box-shadow 0.3s ease",
+                cursor: "pointer",
+                position: "relative",
+                overflow: "hidden",
               }}
-            ></div>
-            <h3 style={{ color: "#1E3A8A", marginBottom: "0.5rem", fontSize: "1.8rem", fontWeight: "600" }}>
-              {member.name}
-            </h3>
-            <p
-              style={{
-                fontSize: "1.1rem",
-                color: "#3B82F6",
-                fontWeight: "bold",
-                marginBottom: "1rem",
+              onMouseOver={(e) => {
+                e.currentTarget.style.boxShadow = "0 15px 30px rgba(0, 255, 255, 0.6)";
+                e.currentTarget.style.transform = "scale(1.05)";
               }}
-            >
-              {member.role}
-            </p>
-            <p
-              style={{
-                fontSize: "0.95rem",
-                color: "#555",
-                lineHeight: "1.5",
-                fontStyle: "italic", // Italicized for aesthetic enhancement
-                margin: "0 auto",
-                maxWidth: "90%",
+              onMouseOut={(e) => {
+                e.currentTarget.style.boxShadow = "0 8px 20px rgba(0, 0, 0, 0.3)";
+                e.currentTarget.style.transform = "scale(1)";
               }}
             >
-              "{member.contribution}"
-            </p>
-          </div>
+              <div
+                style={{
+                  position: "absolute",
+                  top: 0,
+                  left: 0,
+                  width: "100%",
+                  height: "100%",
+                  background: "linear-gradient(135deg, #3B82F6, #1E3A8A)",
+                  zIndex: -1,
+                  opacity: 0.1,
+                }}
+              ></div>
+              <h3 style={{ color: "#1E3A8A", marginBottom: "0.5rem", fontSize: "1.8rem", fontWeight: "600" }}>
+                {member.name}
+              </h3>
+              <p
+                style={{
+                  fontSize: "1.1rem",
+                  color: "#3B82F6",
+                  fontWeight: "bold",
+                  marginBottom: "1rem",
+                }}
+              >
+                {member.role}
+              </p>
+              <p
+                style={{
+                  fontSize: "0.95rem",
+                  color: "#555",
+                  lineHeight: "1.5",
+                  fontStyle: "italic",
+                  margin: "0 auto",
+                  maxWidth: "90%",
+                }}
+              >
+                "{member.contribution}"
+              </p>
+            </div>
+          </a>
         ))}
       </div>
 

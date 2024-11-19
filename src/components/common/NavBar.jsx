@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import './NavBar.css'; 
-import logo from './unnamed.webp';
+import logo from './indian_bite.jpg';
 
 
 const NavBar = () => {
@@ -15,7 +15,7 @@ const NavBar = () => {
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-light navbar-custom shadow-lg fixed-top">
       <div className="container-fluid">
-        <Link className="navbar-brand logo" to="/">
+        <Link className="navbar-brand logo" to="/home">
           <img
             src={logo}
             alt="Indian Bites Logo"
@@ -41,7 +41,7 @@ const NavBar = () => {
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
             <li className="nav-item">
-              <Link className="nav-link text-dark" aria-current="page" to="/">
+              <Link className="nav-link text-dark" aria-current="page" to="/home">
                 Home
               </Link>
             </li>
