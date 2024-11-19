@@ -14,6 +14,7 @@ import Regional from './regional/Regional';
 import Subregion from './regional/Subregion';
 import Regrecipelist from './regional/regionalRecipes/Regrecipelist';
 import Regrecipedetails from './regional/regionalRecipes/Regrecipedetails';
+import About from './pages/About';
 
 function App() {
 
@@ -41,6 +42,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login showAlert={showAlert} />} />
+          <Route path="/about" element={<About showAlert={showAlert} />} />
           <Route path="/signup" element={<Signup showAlert={showAlert} />} />
           <Route path="/recipes" element={<Recipes />} />
           <Route path="/recipes/:recipeId" element={<RecipeDetails />} />
